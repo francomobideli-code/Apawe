@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff7f8">
+  <title>Untuk Admin Accu 🤍</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.9), transparent 28%),
+        linear-gradient(135deg, #fff8f9, #f9eef1);
+      color: #4b3d40;
+      overflow-x: hidden;
+    }
+    .card {
+      width: min(430px, 100%);
+      padding: 34px 25px 30px;
+      text-align: center;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(255,255,255,.95);
+      border-radius: 28px;
+      box-shadow: 0 18px 50px rgba(90, 57, 66, .12);
+      backdrop-filter: blur(10px);
+      animation: appear 1s ease both;
+    }
+    .photo {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #fff;
+      box-shadow: 0 10px 30px rgba(80,50,60,.18);
+      background: #f4e4e8;
+    }
+    .hello {
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #a57d87;
+      margin-bottom: 9px;
+    }
+    h1 {
+      font-size: 31px;
+      color: #634b52;
+      margin-bottom: 18px;
+    }
+    .message {
+      font-size: 17px;
+      line-height: 1.85;
+      color: #5f5155;
+    }
+    .message strong { color: #8d6470; }
+    .divider {
+      width: 55px;
+      height: 1px;
+      background: #d7b7bf;
+      margin: 23px auto;
+    }
+    .closing {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #846b71;
+    }
+    .heart {
+      margin-top: 20px;
+      font-size: 25px;
+      animation: pulse 1.7s infinite;
+    }
+    .footer {
+      margin-top: 18px;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      color: #b09ba0;
+      letter-spacing: .5px;
+    }
+    .petal {
+      position: fixed;
+      top: -20px;
+      pointer-events: none;
+      opacity: .65;
+      animation: fall linear forwards;
+      z-index: -1;
+    }
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(18px) scale(.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.12); }
+    }
+    @keyframes fall {
+      to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="card">
+    <!--
+      GANTI "foto.jpg" dengan nama file foto kamu.
+      Upload foto tersebut ke repository GitHub yang sama dengan index.html.
+    -->
+    <img class="photo" src="foto.jpg" alt="Foto Admin Accu"
+         onerror="this.style.display='none'">
+
+    <div class="hello">A little message for you</div>
+    <h1>Hai, Admin Accu 🤍</h1>
+
+    <div class="message">
+      <p>
+        Semangat buat hari ini ya.
+        Mungkin nggak semua hal berjalan sesuai yang kita mau,
+        tapi semoga selalu ada hal kecil yang bisa bikin kamu tersenyum.
+      </p>
+
+      <div class="divider"></div>
+
+      <p>
+        Kalau hari ini terasa berat, <strong>nggak apa-apa pelan-pelan.</strong>
+        Jangan lupa istirahat kalau capek,
+        dan jangan terlalu keras sama diri sendiri.
+      </p>
+
+      <div class="divider"></div>
+
+      <p>
+        Semoga hari ini berjalan baik,
+        banyak hal baik datang tanpa disangka,
+        dan kamu tetap punya alasan untuk tersenyum.
+      </p>
+    </div>
+
+    <div class="closing">
+      <strong>Semangat ya, kamu pasti bisa. 🌷</strong>
+    </div>
+
+    <div class="heart">♡</div>
+    <div class="footer">made with a little kindness</div>
+  </main>
+
+  <script>
+    // Efek kelopak kecil yang jatuh
+    const symbols = ["♡", "✿", "·"];
+    function createPetal() {
+      const el = document.createElement("div");
+      el.className = "petal";
+      el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      el.style.left = Math.random() * 100 + "vw";
+      el.style.fontSize = (10 + Math.random() * 13) + "px";
+      el.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 11000);
+    }
+    setInterval(createPetal, 700);
+  </script>
+
+</body>
+</html>
